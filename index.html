@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bioactives Initiative Africa</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		line-height: 1.6;
+		color: #333;
+	}
+
+	/* Navbar */
+	.navbar {
+		position: sticky;
+		top: 0;
+		background-color: #ffffff;
+		padding: 1rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 1000;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		flex-wrap: wrap;
+	}
+
+	#logo {
+		font-weight: bold;
+		font-size: 1.8rem;
+		color: #007BFF;
+	}
+
+	#menu-toggle {
+		display: none;
+		font-size: 2rem;
+		cursor: pointer;
+		color: #333;
+	}
+
+	#navlist {
+		display: flex;
+		align-items: center;
+		width: auto;
+	}
+
+	#navlist ul {
+		list-style: none;
+		display: flex;
+		gap: 2rem;
+	}
+
+	#navlist ul li a {
+		text-decoration: none;
+		color: #333;
+		font-size: 1rem;
+		transition: color 0.3s ease;
+	}
+
+	#navlist ul li a:hover {
+		color: #007BFF;
+	}
+
+	/* Main content */
+	.main {
+		width: 90%;
+		max-width: 1200px;
+		margin: 3rem auto;
+		text-align: center;
+	}
+
+	.main img {
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		margin-bottom: 2rem;
+	}
+
+	.main p {
+		max-width: 900px;
+		margin: 2rem auto;
+		padding: 0 1rem;
+		text-align: justify;
+		font-size: 1.2rem;
+		color: #555;
+	}
+
+	.footer {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 1rem;
+		background-color: #ffffff;
+		font-size: 0.9rem;
+		color: #777;
+		box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+	.navbar {
+		position: relative; /* Change from sticky to relative */
+	}
+
+	#menu-toggle {
+		display: block;
+	}
+
+	#navlist {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: #ffffff;
+		flex-direction: column;
+		display: none;
+		padding: 1rem 2rem;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		z-index: 999; /* Make sure it shows above */
+	}
+
+	#navlist.show {
+		display: flex;
+	}
+
+	#navlist ul {
+		flex-direction: column;
+		width: 100%;
+		gap: 1rem;
+	}
+
+	#navlist ul li {
+		width: 100%;
+	}
+
+	#navlist ul li a {
+		display: block;
+		width: 100%;
+		padding: 0.5rem 0;
+	}
+
+	.main p {
+		font-size: 1rem;
+	}
+}
+
+	</style>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<div class="navbar">
+		<span id="logo">Bioactives Initiative Africa</span>
+		<span id="menu-toggle">&#9776;</span>
+		<div id="navlist">
+			<ul> 
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="publication.html">Publications</a></li>
+				<li><a href="team.html">Team</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Main Content -->
+	<div class="main">
+		<img src="images/string_normal_image.png" alt="bioactive discovery" name="biodiscovery">
+	
+		<p>
+			Africa has a rich biodiversity that remains largely untapped yet it has an enormous potential to improve livelihoods of millions of people on the continent and beyond. African biodiversity could be used to make essential medicines, biofuels, bioplastics, fortified foods and nutraceuticals, cosmetics, biopesticides and biofertilizers among others. There is also diverse traditional knowledge concerning the use of biodiversity but with limited information on the bioactive compounds associated. With one of the fastest-growing and youthful populations in the world, Africa also possesses a dynamic human resource capable of driving a new era of sustainable biodiscovery. Our goal is to democratize bioprospecting by leveraging in silico tools such as network biology, computer-aided drug design, machine learning and virtual screening alongside biochemical techniques to accelerate the discovery of bioactives and development of bioproducts. This approach not only promotes innovation but also ensures the conservation of ecosystems and equitable benefit-sharing for local communities.
+		</p>
+	</div>
+
+	<!-- Footer -->
+	<div class="footer">
+		<p>Copyright © 2023-2025. Designed by Kalungi Frank.</p>
+	</div>
+
+	<!-- Script for mobile menu toggle -->
+	<script>
+	const menuToggle = document.getElementById('menu-toggle');
+	const navlist = document.getElementById('navlist');
+	const navLinks = document.querySelectorAll('#navlist ul li a');
+
+	menuToggle.addEventListener('click', function() {
+		navlist.classList.toggle('show');
+	});
+
+	// Close the menu when a link is clicked (on mobile)
+	navLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			navlist.classList.remove('show');
+		});
+	});
+	</script>
+
+</body>
+</html>

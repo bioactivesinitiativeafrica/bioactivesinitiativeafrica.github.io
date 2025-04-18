@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bioactives Initiative Africa</title>
+	<style>
+	* {
+	    margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+	}
+
+	body {
+	    font-family: Arial, sans-serif;
+	    line-height: 1.6;
+	    color: #333;
+	}
+
+	/* Sticky Navbar */
+	.navbar {
+	    position: sticky;
+	    top: 0;
+	    background-color: #f5f5f5;
+	    padding: 1rem 2rem;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    z-index: 1000;
+	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+
+	#logo {
+	    font-weight: bold;
+	    font-size: 1.5rem;
+	    color: #007BFF;
+	}
+
+	/* Hamburger icon */
+	#menu-toggle {
+	    display: none;
+	    font-size: 2rem;
+	    cursor: pointer;
+	}
+
+	/* Navigation links */
+	#navlist {
+	    display: flex;
+	    align-items: center;
+	}
+
+	#navlist ul {
+	    list-style: none;
+	    display: flex;
+	    gap: 1.5rem;
+	}
+
+	#navlist ul li a {
+	    text-decoration: none;
+	    color: #333;
+	    font-size: 1rem;
+	    transition: color 0.3s ease;
+	}
+
+	#navlist ul li a:hover {
+	    color: #007BFF;
+	}
+
+	/* Main content */
+	.main {
+	    width: 100%;
+	}
+
+	.main img {
+	    width: 100%;
+	    height: auto;
+	    display: block;
+	}
+
+	.main p {
+	    max-width: 900px;
+	    margin: 2rem auto;
+	    padding: 0 1rem;
+	    text-align: justify;
+	    font-size: 1.1rem;
+	}
+
+	/* Research Fields */
+	.research-fields {
+	    padding: 3rem 2rem;
+	    background-color: #f9f9f9;
+	}
+
+	.research-fields h2 {
+	    text-align: center;
+	    margin-bottom: 2rem;
+	    font-size: 2rem;
+	    color: #2b2b2b;
+	}
+
+	.field-grid {
+	    display: grid;
+	    grid-template-columns: repeat(3, 1fr);
+	    gap: 2rem;
+	    max-width: 1200px;
+	    margin: 0 auto;
+	}
+
+	.field-card1 {
+	    background-color: white;
+	    border-radius: 10px;
+	    overflow: hidden;
+	    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	    transition: transform 0.3s ease;
+	    text-align: center;
+	}
+
+	.field-card1 img {
+	    width: 100%;
+	    height: 200px;
+	    object-fit: contain;
+	    background-color: #fff;
+	    padding: 10px;
+	}
+
+	.field-card1 h3 {
+	    padding: 1rem;
+	    font-size: 1.2rem;
+	    color: #333;
+	}
+
+	.field-card1:hover {
+	    transform: translateY(-5px);
+	}
+
+	/* Publications */
+	.publications {
+	    padding: 3rem 2rem;
+	    background-color: #fff;
+	}
+
+	.publications h2 {
+	    text-align: center;
+	    margin-bottom: 2rem;
+	    font-size: 2rem;
+	    color: #2b2b2b;
+	}
+
+	.publication-list {
+	    max-width: 900px;
+	    margin: 0 auto;
+	}
+
+	.publication-list ol {
+	    padding-left: 1.2rem;
+	}
+
+	.publication-item {
+	    background: #f5f5f5;
+	    padding: 1rem;
+	    margin-bottom: 1rem;
+	    border-radius: 5px;
+	    list-style-position: inside;
+	}
+
+	.publication-item a {
+	    text-decoration: none;
+	    color: #007BFF;
+	}
+
+	.publication-item a:hover {
+	    text-decoration: underline;
+	}
+	.footer {
+	    text-align: center;
+	    margin-top: 4rem;
+	    padding: 1rem;
+	    background-color: #ffffff;
+	    font-size: 0.9rem;
+	    color: #777;
+	    box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+	}
+
+
+	/* Responsive styles */
+	@media (max-width: 768px) {
+	    .navbar {
+	        flex-wrap: nowrap;
+	        flex-direction: row;
+	        position: relative;
+	    }
+
+	    #menu-toggle {
+	        display: block;
+	    }
+
+	    #navlist {
+	        position: absolute;
+	        top: 100%;
+	        left: 0;
+	        width: 100%;
+	        background-color: #f5f5f5;
+	        display: none;
+	        flex-direction: column;
+	        align-items: flex-start;
+	        padding: 1rem 2rem;
+	        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	    }
+
+	    #navlist ul {
+	        flex-direction: column;
+	        gap: 1rem;
+	        width: 100%;
+	    }
+
+	    #navlist.show {
+	        display: flex;
+	    }
+
+	    .field-grid {
+	        grid-template-columns: 1fr;
+	    }
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+	    .field-grid {
+	        grid-template-columns: repeat(2, 1fr);
+	    }
+	}
+</style>
+
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<div class="navbar">
+		<span id="logo">Bioactives Initiative Africa</span>
+		<span id="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
+		<div id="navlist">
+			<ul> 
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="publication.html">Publications</a></li>
+				<li><a href="team.html">Team</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Main -->
+	<div class="main">
+		<p>
+			We are a multidisciplinary team of scientists, engineers and innovators at the intersection of biology, technology and product development. Our expertise spans computational biology, bioinformatics, microbiology, phytochemistry, systems biology, molecular biology and formulation science. Leveraging cutting-edge tools like machine learning, computer-aided drug design (CADD), biological network analysis, phytochemical profiling, precision genetic engineering, and food formulation technologies, we accelerate the journey from discovery to impact. <br><br>
+			In drug design, we apply AI-driven discovery platforms and network biology to identify, optimize, and develop new therapeutics  with a special focus on harnessing the power of natural compounds. In biofortification, we reimagine nutrition by developing foods with enhanced micronutrient profiles to meet the needs of a growing world. Our agro-biodiscovery  pipeline blends microbial innovation and natural product chemistry to deliver sustainable, high-performance crop protection and nutrition solutions. We also develop biodiversity conservation strategies. At our core, we believe in translating biological complexity into tangible solutions  building a future where health, agriculture and sustainability are seamlessly connected through science and innovation.
+		</p>
+	</div>
+
+	<!-- Research Fields Section -->
+	<section class="research-fields">
+		<h2>Our team</h2>
+		<div class="field-grid">
+			<div class="field-card1">
+				<img src="images/kalungi.jpeg" alt="Kalungi Frank">
+				<h3>Kalungi Frank</h3>
+				<span><b>Genome engineer & Bioinformatician</b> </span>
+			</div>
+			<div class="field-card1">
+				<img src="images/eric.png" alt="Eric Kisaakye">
+				<h3>Kyambadde Eric Kisaakye</h3>
+				<span><b>Molecular Biologist & Bioinformatician</b> </span>
+			</div>
+			<div class="field-card1">
+				<img src="images/adam.jpg" alt="adam fakuz">
+				<h3>Adrole Adam Fakuz</h3>
+				<span><b>Product development specialist</b> </span>
+			</div>
+			<div class="field-card1">
+				<img src="images/felix.jpg" alt="Tuyisabe Felix">
+				<h3>Tuyisabe Felix</h3>
+				<span><b>Agricultural Biotechnologist</b> </span>
+			</div>
+			<div class="field-card1">
+				<img src="images/usericon.jpeg" alt="Kirya Griffin">
+				<h3>Kirya Griffin</h3>
+				<span><b>Biotechnologist</b> </span>
+			</div>
+			<!-- Add more cards if needed -->
+		</div>
+	</section>
+
+	<div class="footer">
+	    <p>Copyright © 2023-2025. Designed by Kalungi Frank.</p>
+	</div>
+	
+	<script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navlist = document.getElementById('navlist');
+
+        menuToggle.addEventListener('click', function() {
+            navlist.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>
