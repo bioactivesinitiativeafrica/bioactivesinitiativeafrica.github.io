@@ -1,5 +1,6 @@
 title: "Bioactives Initiative Africa"
-description: "This is a website for Bioactives initiative Africa"
+description: "Bioactives initiative Africa is a research group focused on mining African biodiversity to discover important bioactive molecules"
+url:"https://biafrica.github.io/"
 theme: jekyll-theme-minimal  # Change based on your theme
 plugins:
   - jekyll-sitemap
