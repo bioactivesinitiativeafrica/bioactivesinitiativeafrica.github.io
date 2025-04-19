@@ -1,0 +1,6 @@
+title: "Bioactives Initiative Africa"
+description: "This is a website for Bioactives initiative Africa"
+theme: jekyll-theme-minimal  # Change based on your theme
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
